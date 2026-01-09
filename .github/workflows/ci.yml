@@ -33,7 +33,7 @@ jobs:
       - name: Backend - run tests
         working-directory: backend
         run: |
-          pytest || echo "No backend tests yet"
+          pytest 
 
       - name: Frontend - install dependencies
         working-directory: frontend
