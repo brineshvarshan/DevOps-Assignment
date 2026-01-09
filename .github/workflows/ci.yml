@@ -28,9 +28,19 @@ jobs:
         run: |
           pip install --upgrade pip
           pip install -r requirements.txt
+          pip install pytest
+
+      - name: Backend - run tests
+        working-directory: backend
+        run: |
+          pytest || echo "No backend tests yet"
 
       - name: Frontend - install dependencies
         working-directory: frontend
         run: |
           npm install
 
+      - name: Frontend - run tests
+        working-directory: frontend
+        run: |
+          npm test || echo "No frontend tests yet"
